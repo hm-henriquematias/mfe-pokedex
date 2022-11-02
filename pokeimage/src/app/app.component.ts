@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: []
 })
 export class AppComponent {
-  sprite = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png';
   title = 'pokeimage';
+  sprite: string = '';
+
+  @Input()
+  set spriteUrl(spritePngUrl: string) {
+    this.sprite = spritePngUrl;
+  }
 }
